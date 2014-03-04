@@ -7,13 +7,11 @@ void end(int signal){
 	exit(0);
 }
 int main(int argc, char *argv[]){
-	if (argc != 2){
+	if (argc != 2)
 		return -1;
-	}
 	fp = fopen(argv[1], "a");
-	if (fp == NULL){
+	if (fp == NULL)
 		return -1;
-	}
 	signal(SIGINT, end);
 	char c;
 	while(1){
