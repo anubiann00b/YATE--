@@ -9,7 +9,7 @@ void end(int signal){
 int main(int n,char *a[]){
 	if (n!=2)
 		return -1;
-	if ((f=fopen(a[1],"w")) == NULL)
+	if ((f=fopen(a[1],"w"))==NULL)
 		return -1;
 	signal(SIGINT,end);
 	char c;
