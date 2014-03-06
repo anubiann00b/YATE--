@@ -9,13 +9,13 @@ void end(int signal){
 int main(int argc, char *argv[]){
 	if (argc != 2)
 		return -1;
-	fp = fopen(argv[1],"a");
-	if (fp == NULL)
+	if ((fp = fopen(argv[1],"w")) == NULL)
 		return -1;
-	signal(SIGINT, end);
+	signal(SIGINT,end);
 	char c;
 	while(1){
-		c = getchar();
-		fprintf(fp,"%c",c);
+		if ((c = getchar()) != -1) {
+			fprintf(fp,"%c",c);
+		}
 	}
 }
